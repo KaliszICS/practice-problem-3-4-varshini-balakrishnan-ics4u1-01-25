@@ -1,27 +1,37 @@
+import java.util.*;
 public class PracticeProblem {
 
 	public static void main(String args[]) {
 
 	}
-
-	public static void q1() {
-		//Write question 1 code here
+	public static int[] recaman(int n) {
+		if (n<= 0) {
+			return new int[0];
+		}
+		int[] seq = new int[n];
+		seq[0] = 0;
+		recamanHelper(seq, 1);
+		return seq;
 	}
-
-	public static void q2() {
-		//Write question 2 code here
+	public static void recamanHelper(int[] seq, int i) {
+		if (i>= seq.length) {
+			return;
+		}
+		int next = seq[i-1] - i;
+		if (next > 0 && ! usedBefore(seq, next, i)) {
+			seq[i] = next;
+		} else {
+			seq[i] = seq[i-1] + i;
+		}
+		recamanHelper(seq, i+1);
 	}
-
-	public static void q3() {
-		//Write question 3 code here
+	public static int boolean usedBefore(int[] seq, int value, int limit) {
+		for (int j = 0; j < limit; j++) {
+			if (seq[j] == value) {
+				return true;
+			}
+		}
+		return false;
 	}
-
-	public static void q4() {
-		//Write question 4 code here
-	}
-
-	public static void q5() {
-		//Write question 5 code here
-	}
-
 }
+	
