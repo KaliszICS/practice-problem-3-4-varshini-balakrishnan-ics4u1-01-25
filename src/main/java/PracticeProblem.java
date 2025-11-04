@@ -9,7 +9,7 @@ public class PracticeProblem {
 			return new int[0];
 		}
 		int[] seq = new int[n];
-		seq[0] = 0;
+		seq[0] = 1;
 		recamanHelper(seq, 1);
 		return seq;
 	}
