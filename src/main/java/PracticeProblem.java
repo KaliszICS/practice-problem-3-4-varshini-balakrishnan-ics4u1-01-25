@@ -1,4 +1,3 @@
-import java.util.*;
 public class PracticeProblem {
 
 	public static void main(String args[]) {
@@ -17,11 +16,12 @@ public class PracticeProblem {
 		if (i>= seq.length) {
 			return;
 		}
-		int next = seq[i-1] - i;
+		int step = i + 1;
+		int next = seq[i-1] - step;
 		if (next > 0 && ! usedBefore(seq, next, i)) {
 			seq[i] = next;
 		} else {
-			seq[i] = seq[i-1] + i;
+			seq[i] = seq[i-1] + step;
 		}
 		recamanHelper(seq, i+1);
 	}
