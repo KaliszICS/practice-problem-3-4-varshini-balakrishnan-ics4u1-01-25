@@ -25,7 +25,7 @@ public class PracticeProblem {
 		}
 		recamanHelper(seq, i+1);
 	}
-	public static int boolean usedBefore(int[] seq, int value, int limit) {
+	public static boolean usedBefore(int[] seq, int value, int limit) {
 		for (int j = 0; j < limit; j++) {
 			if (seq[j] == value) {
 				return true;
